@@ -33,6 +33,10 @@ class PeliTest {
     @Test
     @DisplayName("p1 voittaa kun hänellä on sakset ja p2 on paperi")
     void testSaksetToPaperi(){
-        Assertions.assertTrue(p1.pelaajanValinta().equals("sakset") && p2.pelaajanValinta().equals("paperi"));
+
+        p1.pelaajanValinta().equals("sakset");
+        p2.pelaajanValinta().equals("paperi");
+
+        assertEquals(1, p1.getVoitot());
     }
 }
