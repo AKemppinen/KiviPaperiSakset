@@ -23,10 +23,27 @@ class PeliTest {
         }
     }
     @Test
-    @DisplayName("Testaa loppuuko peli 3 voiton kohdalla")
+    @DisplayName("Testaa voittaako p1, jos hänellä on 3 voittoa")
     void testPeliLoppuuJosOn3Voittoa() {
 
         p1.setVoitot(3);
+        Assertions.assertEquals(3,p1.getVoitot());
+    }
+
+    @Test
+    @DisplayName("Testaa voittaako p2, jos hänellä on 3 voittoa")
+    void testPeliLoppuuJosOn3Voittoap2() {
+
+        p2.setVoitot(3);
+        Assertions.assertEquals(3,p2.getVoitot());
+    }
+
+    @Test
+    @DisplayName("Testaa voitontarkistuksen, jos pelaajalla on 3 voittoa")
+    void testVoitontarkistusJosVoittaa() {
+
+        peli.p1.setVoitot(3);
+        peli.voitonTarkistus();
         Assertions.assertTrue(peli.peliLoppui);
     }
 
@@ -34,9 +51,9 @@ class PeliTest {
     @DisplayName("p1 voittaa kun hänellä on sakset ja p2 on paperi")
     void testSaksetToPaperi(){
 
-        p1.pelaajanValinta().equals("sakset");
-        p2.pelaajanValinta().equals("paperi");
+        peli.p1.pelaajanValinta().equals("sakset");
+        peli.p2.pelaajanValinta().equals("paperi");
 
-        assertEquals(1, p1.getVoitot());
+        Assertions.assertEquals(1, p1.getVoitot());
     }
 }

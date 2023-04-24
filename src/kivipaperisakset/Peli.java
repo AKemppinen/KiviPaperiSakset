@@ -5,6 +5,9 @@ package kivipaperisakset;
  * @author Ira Dook
  */
 public class Peli {
+
+    Pelaaja p1 = new Pelaaja();
+    Pelaaja p2 = new Pelaaja();
     boolean peliLoppui = false;
     int pelatutPelit = 0;           // Pelattujen pelien lkm
     int p1Voitot = 0;       // Pelaaja 1:n voittojen lkm
@@ -13,7 +16,7 @@ public class Peli {
     String p1Valinta;
     String p2Valinta;
 
-    public void pelaaErä(Pelaaja p1, Pelaaja p2) {
+    public void pelaaErä() {
         System.out.println("Erä: "
                 + pelatutPelit + " =====================\n");
         System.out.println("Tasapelien lukumäärä: "
@@ -62,7 +65,7 @@ public class Peli {
         System.out.println();
     }
 
-    public void voitonTarkistus(Pelaaja p1, Pelaaja p2) {
+    public void voitonTarkistus() {
         if (p1.getVoitot() >= 3) {
 
             peliLoppui = true;
@@ -73,17 +76,22 @@ public class Peli {
             peliLoppui = true;
             System.out.println("KOLME VOITTOA - PELI PÄÄTTYY");
             System.out.println("PELAAJA 2 VOITTAA TURNAUKSEN");
+            System.out.println(peliLoppui);
         }
     }
 
     public static void main(String args[]) {
-        Pelaaja p1 = new Pelaaja();
-        Pelaaja p2 = new Pelaaja();
         Peli peli = new Peli();
 
-        do {
-            peli.pelaaErä(p1,p2);
-            peli.voitonTarkistus(p1,p2);
-        } while (peli.peliLoppui != true);
+        peli.voitonTarkistus();
+        peli.pelaaErä();
+
+        while (peli.peliLoppui != true) {
+            peli.voitonTarkistus();
+            if(peli.peliLoppui != true) {
+                peli.pelaaErä();
+            }
+
+        }
     }
 }

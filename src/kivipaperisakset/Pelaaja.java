@@ -29,8 +29,8 @@ public class Pelaaja {
         return valinta;
     }
 
-    public void setVoitot(int voittojemaara) {
-        voitot = voittojemaara;
+    public void setVoitot(int voittojenmaara) {
+        voitot = voittojenmaara;
     }
 
     public int getVoitot() {
