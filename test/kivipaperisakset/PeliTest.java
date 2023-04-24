@@ -47,27 +47,37 @@ class PeliTest {
 
     @Test
     @DisplayName("Tarkastetaan kaikki mahdolliset tulokset pelistä")
-    void testSaksetToPaperi(){
+    void testKPS(){
 
-        peli.p1.pelaajanValinta();
-        peli.p2.pelaajanValinta();
+            peli.pelaaErä();
 
-        if ((peli.p1.pelaajanValinta().equals("kivi")) && (peli.p2.pelaajanValinta().equals("paperi"))) {
-            Assertions.assertEquals(1, peli.p2.getVoitot());
-        } else if ((peli.p1.pelaajanValinta().equals("paperi")) && (peli.p2.pelaajanValinta().equals("kivi"))) {
-            Assertions.assertEquals(1, peli.p1.getVoitot());
-        } else if ((peli.p1.pelaajanValinta().equals("kivi")) && (peli.p2.pelaajanValinta().equals("sakset"))) {
-            Assertions.assertEquals(1, peli.p1.getVoitot());
-        } else if ((peli.p1.pelaajanValinta().equals("sakset")) && (peli.p2.pelaajanValinta().equals("kivi"))) {
-            Assertions.assertEquals(1, peli.p2.getVoitot());
-        } else if ((peli.p1.pelaajanValinta().equals("sakset")) && (peli.p2.pelaajanValinta().equals("paperi"))) {
-            Assertions.assertEquals(1, peli.p1.getVoitot());
-        } else if ((peli.p1.pelaajanValinta().equals("paperi")) && (peli.p2.pelaajanValinta().equals("sakset"))) {
-            Assertions.assertEquals(1, peli.p2.getVoitot());
-        }
-        if (peli.p1.pelaajanValinta() == peli.p2.pelaajanValinta()) {
-            Assertions.assertEquals(1, peli.tasapelit);
-        }
+            if ((peli.p1.pelaajanValinta().equals("kivi")) && (peli.p2.pelaajanValinta().equals("paperi"))) {
+                Assertions.assertEquals(1, peli.p2.getVoitot());
+            } else if ((peli.p1.pelaajanValinta().equals("paperi")) && (peli.p2.pelaajanValinta().equals("kivi"))) {
+                Assertions.assertEquals(1, peli.p1.getVoitot());
+            } else if ((peli.p1.pelaajanValinta().equals("kivi")) && (peli.p2.pelaajanValinta().equals("sakset"))) {
+                Assertions.assertEquals(1, peli.p1.getVoitot());
+            } else if ((peli.p1.pelaajanValinta().equals("sakset")) && (peli.p2.pelaajanValinta().equals("kivi"))) {
+                Assertions.assertEquals(1, peli.p2.getVoitot());
+            } else if ((peli.p1.pelaajanValinta().equals("sakset")) && (peli.p2.pelaajanValinta().equals("paperi"))) {
+                Assertions.assertEquals(1, peli.p1.getVoitot());
+            } else if ((peli.p1.pelaajanValinta().equals("paperi")) && (peli.p2.pelaajanValinta().equals("sakset"))) {
+                Assertions.assertEquals(1, peli.p2.getVoitot());
+            }
+            if (peli.p1.pelaajanValinta() == peli.p2.pelaajanValinta()) {
+                Assertions.assertEquals(1, peli.tasapelit);
+            }
 
+
+
+
+    }
+
+    @Test
+    @DisplayName("Testaa pelattujen pelien laskurin toimivuutta")
+    void testPelienmaara() {
+
+        peli.pelatutPelit++;
+        Assertions.assertEquals(1,peli.pelatutPelit);
     }
 }
