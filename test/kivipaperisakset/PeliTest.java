@@ -52,24 +52,20 @@ class PeliTest {
             peli.pelaaErä();
 
             if ((peli.p1.pelaajanValinta().equals("kivi")) && (peli.p2.pelaajanValinta().equals("paperi"))) {
-                Assertions.assertEquals(1, peli.p2.getVoitot());
+                Assertions.assertEquals(1, peli.p2Voitot);
             } else if ((peli.p1.pelaajanValinta().equals("paperi")) && (peli.p2.pelaajanValinta().equals("kivi"))) {
-                Assertions.assertEquals(1, peli.p1.getVoitot());
+                Assertions.assertEquals(1, peli.p1Voitot);
             } else if ((peli.p1.pelaajanValinta().equals("kivi")) && (peli.p2.pelaajanValinta().equals("sakset"))) {
-                Assertions.assertEquals(1, peli.p1.getVoitot());
+                Assertions.assertEquals(1, peli.p1Voitot);
             } else if ((peli.p1.pelaajanValinta().equals("sakset")) && (peli.p2.pelaajanValinta().equals("kivi"))) {
-                Assertions.assertEquals(1, peli.p2.getVoitot());
+                Assertions.assertEquals(1, peli.p2Voitot);
             } else if ((peli.p1.pelaajanValinta().equals("sakset")) && (peli.p2.pelaajanValinta().equals("paperi"))) {
-                Assertions.assertEquals(1, peli.p1.getVoitot());
+                Assertions.assertEquals(1, peli.p1Voitot);
             } else if ((peli.p1.pelaajanValinta().equals("paperi")) && (peli.p2.pelaajanValinta().equals("sakset"))) {
-                Assertions.assertEquals(1, peli.p2.getVoitot());
-            }
-            if (peli.p1.pelaajanValinta() == peli.p2.pelaajanValinta()) {
+                Assertions.assertEquals(1, peli.p2Voitot);
+            } else if (peli.p1.pelaajanValinta() == peli.p2.pelaajanValinta()) {
                 Assertions.assertEquals(1, peli.tasapelit);
             }
-
-
-
 
     }
 
