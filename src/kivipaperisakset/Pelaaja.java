@@ -13,6 +13,7 @@ public class Pelaaja {
      * Valitse randomilla kivi, paperi tai sakset
      */
     public String pelaajanValinta() {
+        //Valitsee satunnaisesti joko kivi, paperi tai sakset
         String valinta = "";
         int c = (int) (Math.random() * 3);
         switch (c) {
@@ -36,15 +37,17 @@ public class Pelaaja {
      * Laittaa voiton arvoksi parametrista saadun arvon.
      */
     public void setVoitot(int voittojenmaara) {
+        //Laittaa voiton arvoksi parametrista saadun arvon
         voitot = voittojenmaara;
     }
 
     /**
      * @author Antti Kemppinen
-     * Hakee voitot
+     * Palauttaa voitot
      * @return
      */
     public int getVoitot() {
+        //Palauttaa voitot
         return voitot;
     }
 }

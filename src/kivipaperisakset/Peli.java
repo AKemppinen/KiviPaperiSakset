@@ -7,15 +7,16 @@ package kivipaperisakset;
  */
 public class Peli {
 
+    //Lisää 2 pelaajaa
     Pelaaja p1 = new Pelaaja();
     Pelaaja p2 = new Pelaaja();
-    boolean peliLoppui = false;
-    int pelatutPelit = 0;           // Pelattujen pelien lkm
-    int p1Voitot = 0;       // Pelaaja 1:n voittojen lkm
-    int p2Voitot = 0;       // Pelaaja 2:n voittojen lkm
-    int tasapelit = 0;              // Tasapelien lkm
-    String p1Valinta;
-    String p2Valinta;
+    boolean peliLoppui = false; // Onko peli loppunut vai ei
+    int pelatutPelit = 0;// Pelattujen pelien lkm
+    int p1Voitot = 0;// Pelaaja 1:n voittojen lkm
+    int p2Voitot = 0;// Pelaaja 2:n voittojen lkm
+    int tasapelit = 0;// Tasapelien lkm
+    String p1Valinta; // Pelaajan 1 valinta
+    String p2Valinta; // Pelaajan 2 valinta
 
     /**
      * @author Antti Kemppinen
@@ -26,10 +27,13 @@ public class Peli {
      * Lopuksi lisätään pelien määrää yhdellä.
      */
     public void pelaaErä() {
+        //Printtaa erän
         System.out.println("Erä: "
                 + pelatutPelit + " =====================\n");
+        //Printtaa tasapelien määrän
         System.out.println("Tasapelien lukumäärä: "
                 + tasapelit + "\n");
+        //p1 ja p2 valitsevat kivi, paperi tai sakset
         p1Valinta = p1.pelaajanValinta();
         System.out.println("Pelaaja 1: " + p1Valinta
                 + "\n\t Pelaaja 1:llä koossa " + p1Voitot + " voittoa.");
@@ -37,10 +41,7 @@ public class Peli {
         System.out.println("Pelaaja 2: " + p2Valinta
                 + "\n\t Pelaaja 2:lla koossa " + p2Voitot + " voittoa.");
 
-        // Allaolevassa pätkässä on yritetty eri tapoja saada
-        // lukumäärän laskeminen toimimaan oikein.
-        // Ei tää kyllä vieläkään skulaa - KORJAA!
-
+        //Tarkistaa erikseen jokaisen mahdollisen tuloksen
         if ((p1Valinta.equals("kivi")) && (p2Valinta.equals("paperi"))) {
             System.out.println("Pelaaja 2 voittaa");
             p2Voitot++;
@@ -70,6 +71,7 @@ public class Peli {
             tasapelit++;
             System.out.println("\n\t\t\t Tasapeli \n");
         }
+        //Lisää pelattuihin peleihin yhden pelin
         pelatutPelit++;
         System.out.println();
     }
@@ -80,6 +82,7 @@ public class Peli {
      * muuttuu peliLoppui muuttuja arvoon true, joka lopettaa pelin
      */
     public void voitonTarkistus() {
+        //Tarkistaa jos jommallakummalla on 3 voittoa
         if (p1.getVoitot() >= 3) {
 
             peliLoppui = true;
@@ -104,10 +107,11 @@ public class Peli {
      */
     public static void main(String args[]) {
         Peli peli = new Peli();
-
+        //Pelaa yhden erän
         peli.voitonTarkistus();
         peli.pelaaErä();
 
+        //Pelaa peliä kunnes peliLoppui muuttuu, eli jompikumpi pelaaja on voittanut 3 kertaa
         while (peli.peliLoppui != true) {
             peli.voitonTarkistus();
             if(peli.peliLoppui != true) {
