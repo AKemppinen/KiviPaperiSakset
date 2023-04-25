@@ -92,6 +92,7 @@ public class Peli {
             System.out.println("KOLME VOITTOA - PELI PÄÄTTYY");
             System.out.println("PELAAJA 2 VOITTAA TURNAUKSEN");
             System.out.println(peliLoppui);
+
         }
     }
 
@@ -109,9 +110,9 @@ public class Peli {
         peli.pelaaErä();
 
         //Pelaa peliä kunnes peliLoppui muuttuu, eli jompikumpi pelaaja on voittanut 3 kertaa
-        while (peli.peliLoppui != true) {
+        while (!peli.peliLoppui) {
             peli.voitonTarkistus();
-            if(peli.peliLoppui != true) {
+            if(!peli.peliLoppui) {
                 peli.pelaaErä();
             }
 
