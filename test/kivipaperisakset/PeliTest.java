@@ -18,7 +18,6 @@ class PeliTest {
 
 
     /**
-     * @author Antti Kemppinen
      * Testaa, että pelaajalla on vaihtoehtoina kivi, paperi tai sakset
      */
     @Test
@@ -31,7 +30,6 @@ class PeliTest {
         }
     }
     /**
-     * @author Antti Kemppinen
      * Testaa voittaako p1, jos hänellä on 3 voittoa
      */
     @Test
@@ -42,7 +40,6 @@ class PeliTest {
         Assertions.assertEquals(3,peli.p1.getVoitot());
     }
     /**
-     * @author Antti Kemppinen
      * Testaa voittaako p2, jos hänellä on 3 voittoa
      */
     @Test
@@ -53,7 +50,6 @@ class PeliTest {
         Assertions.assertEquals(3,peli.p2.getVoitot());
     }
     /**
-     * @author Antti Kemppinen
      * Testaa voitontarkistuksen, jos pelaajalla on 3 voittoa
      */
     @Test
@@ -65,7 +61,6 @@ class PeliTest {
         Assertions.assertTrue(peli.peliLoppui);
     }
     /**
-     * @author Antti Kemppinen
      * Tarkastetaan kaikki mahdolliset tulokset pelistä
      */
     @Test
@@ -92,7 +87,6 @@ class PeliTest {
 
     }
     /**
-     * @author Antti Kemppinen
      * Testaa pelattujen pelien laskurin toimivuutta
      */
     @Test

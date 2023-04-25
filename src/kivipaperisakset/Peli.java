@@ -19,7 +19,6 @@ public class Peli {
     String p2Valinta; // Pelaajan 2 valinta
 
     /**
-     * @author Antti Kemppinen
      * Pelaa yhden erän kivi sakset paperi peliä.
      * Ensin molemmat pelaajat valitsevat satunnaisesti joko arvot kivi, sakset tai paperi.
      * Tämän jälkeen tarkistetaan mitä kumpikin sai ja verrataan niitä toisiinsa.
@@ -77,7 +76,6 @@ public class Peli {
     }
 
     /**
-     * @author Antti Kemppinen
      * Tarkastaa voiton. Jos jommalla kummalla pelaajalla on 3 tai enemmän voittoja
      * muuttuu peliLoppui muuttuja arvoon true, joka lopettaa pelin
      */
@@ -100,7 +98,6 @@ public class Peli {
     /**
      *
      * @param args
-     * @author Antti Kemppinen
      * Tarkistaa aluksi onko jompikumpi pelaajista jo voittanut, jonka jälkeen pelaa yhden erän.
      * Tämän jälkeen pelataan niin monta erää kunnes jompikumpi saa 3 voittoa, joka johtaa
      * peliLoppui muuttujan arvon vaihtumiseen arvoon true. Kun arvo on true while loop loppuu.

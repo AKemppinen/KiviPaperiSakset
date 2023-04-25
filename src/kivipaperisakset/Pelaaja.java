@@ -33,7 +33,6 @@ public class Pelaaja {
     /**
      *
      * @param voittojenmaara
-     * @author Antti Kemppinen
      * Laittaa voiton arvoksi parametrista saadun arvon.
      */
     public void setVoitot(int voittojenmaara) {
@@ -42,7 +41,6 @@ public class Pelaaja {
     }
 
     /**
-     * @author Antti Kemppinen
      * Palauttaa voitot
      * @return
      */
