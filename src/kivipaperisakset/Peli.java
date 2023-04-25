@@ -2,7 +2,8 @@ package kivipaperisakset;
 
 /**
  *
- * @author Ira Dook
+ * @author Antti Kemppinen
+ * Määritellään pelille instannsimuuttujat.
  */
 public class Peli {
 
@@ -16,6 +17,14 @@ public class Peli {
     String p1Valinta;
     String p2Valinta;
 
+    /**
+     * @author Antti Kemppinen
+     * Pelaa yhden erän kivi sakset paperi peliä.
+     * Ensin molemmat pelaajat valitsevat satunnaisesti joko arvot kivi, sakset tai paperi.
+     * Tämän jälkeen tarkistetaan mitä kumpikin sai ja verrataan niitä toisiinsa.
+     * Tämän jälkeen pelaajien pisteitä lisätään sitä mukaan kumpi voitti.
+     * Lopuksi lisätään pelien määrää yhdellä.
+     */
     public void pelaaErä() {
         System.out.println("Erä: "
                 + pelatutPelit + " =====================\n");
@@ -65,6 +74,11 @@ public class Peli {
         System.out.println();
     }
 
+    /**
+     * @author Antti Kemppinen
+     * Tarkastaa voiton. Jos jommalla kummalla pelaajalla on 3 tai enemmän voittoja
+     * muuttuu peliLoppui muuttuja arvoon true, joka lopettaa pelin
+     */
     public void voitonTarkistus() {
         if (p1.getVoitot() >= 3) {
 
@@ -80,6 +94,14 @@ public class Peli {
         }
     }
 
+    /**
+     *
+     * @param args
+     * @author Antti Kemppinen
+     * Tarkistaa aluksi onko jompikumpi pelaajista jo voittanut, jonka jälkeen pelaa yhden erän.
+     * Tämän jälkeen pelataan niin monta erää kunnes jompikumpi saa 3 voittoa, joka johtaa
+     * peliLoppui muuttujan arvon vaihtumiseen arvoon true. Kun arvo on true while loop loppuu.
+     */
     public static void main(String args[]) {
         Peli peli = new Peli();
 

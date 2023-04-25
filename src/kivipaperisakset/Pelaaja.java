@@ -3,7 +3,7 @@ package kivipaperisakset;
 
 /**
  *
- * @author Ira Dook
+ * @author Antti Kemppinen
  */
 public class Pelaaja {
 
@@ -29,10 +29,21 @@ public class Pelaaja {
         return valinta;
     }
 
+    /**
+     *
+     * @param voittojenmaara
+     * @author Antti Kemppinen
+     * Laittaa voiton arvoksi parametrista saadun arvon.
+     */
     public void setVoitot(int voittojenmaara) {
         voitot = voittojenmaara;
     }
 
+    /**
+     * @author Antti Kemppinen
+     * Hakee voitot
+     * @return
+     */
     public int getVoitot() {
         return voitot;
     }
